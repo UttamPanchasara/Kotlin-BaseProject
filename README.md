@@ -1,5 +1,4 @@
-# Kotlin-BaseProject
-# Android MVVM Architecture: Sample App with basic screens
+# Android-Kotlin MVVM Architecture  
 This repository contains a sample project with basic screens that implements MVVM architecture using Dagger2, Room, RxJava2, and Retrofit
 
 
@@ -17,9 +16,8 @@ This repository contains a sample project with basic screens that implements MVV
 3. Retrofit: https://square.github.io/retrofit/
 4. Room: https://developer.android.com/topic/libraries/architecture/room
 
-### Reference
-## This project is created from following reference project :
+#### Reference : This project is created from following reference project :
 https://github.com/MindorksOpenSource/android-mvp-architecture
 
-### Contributing to Android MVVM Architecture
+### Contributing to Android-Kotlin MVVM Architecture
 All pull requests are welcome.
