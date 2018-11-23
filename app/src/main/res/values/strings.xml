@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Base Project</string>
+    <string name="hint_email">Email</string>
+    <string name="text_login">Login</string>
+</resources>
