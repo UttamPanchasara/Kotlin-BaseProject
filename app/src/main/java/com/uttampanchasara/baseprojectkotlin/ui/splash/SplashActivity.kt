@@ -17,7 +17,7 @@ class SplashActivity : BaseActivity(), SplashView {
     lateinit var mDataManager: DataManager
 
     @Inject
-    lateinit var mViewModel: SplashViewModel<SplashView>
+    lateinit var mViewModel: SplashViewModel
 
     override fun injectComponents(mActivityComponent: ActivityComponent) {
         mActivityComponent.inject(this)

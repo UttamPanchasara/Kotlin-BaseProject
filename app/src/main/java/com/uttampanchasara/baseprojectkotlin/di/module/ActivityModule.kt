@@ -5,11 +5,8 @@ import android.support.v7.app.AppCompatActivity
 import com.uttampanchasara.baseprojectkotlin.data.DataManager
 import com.uttampanchasara.baseprojectkotlin.di.ActivityContext
 import com.uttampanchasara.baseprojectkotlin.di.PerActivity
-import com.uttampanchasara.baseprojectkotlin.ui.dashboard.DashboardView
 import com.uttampanchasara.baseprojectkotlin.ui.dashboard.DashboardViewModel
-import com.uttampanchasara.baseprojectkotlin.ui.signin.SignInView
 import com.uttampanchasara.baseprojectkotlin.ui.signin.SignInViewModel
-import com.uttampanchasara.baseprojectkotlin.ui.splash.SplashView
 import com.uttampanchasara.baseprojectkotlin.ui.splash.SplashViewModel
 import com.uttampanchasara.baseprojectkotlin.utils.rx.AppSchedulerProvider
 import com.uttampanchasara.baseprojectkotlin.utils.rx.SchedulerProvider
@@ -44,16 +41,16 @@ class ActivityModule constructor(val mActivity: AppCompatActivity) {
     @Provides
     @PerActivity
     internal fun provideSignInViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider, compositeDisposable: CompositeDisposable):
-            SignInViewModel<SignInView> = SignInViewModel(dataManager, schedulerProvider, compositeDisposable)
+            SignInViewModel = SignInViewModel(dataManager, schedulerProvider, compositeDisposable)
 
     @Provides
     @PerActivity
     internal fun provideDashboardViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider, compositeDisposable: CompositeDisposable):
-            DashboardViewModel<DashboardView> = DashboardViewModel(dataManager, schedulerProvider, compositeDisposable)
+            DashboardViewModel = DashboardViewModel(dataManager, schedulerProvider, compositeDisposable)
 
     @Provides
     @PerActivity
     internal fun provideSplashViewModel(dataManager: DataManager, schedulerProvider: SchedulerProvider, compositeDisposable: CompositeDisposable):
-            SplashViewModel<SplashView> = SplashViewModel(dataManager, schedulerProvider, compositeDisposable)
+            SplashViewModel = SplashViewModel(dataManager, schedulerProvider, compositeDisposable)
 
 }

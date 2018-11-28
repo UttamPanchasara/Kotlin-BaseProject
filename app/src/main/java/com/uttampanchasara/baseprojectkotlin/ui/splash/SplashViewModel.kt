@@ -12,21 +12,16 @@ import javax.inject.Inject
  * @author <a href="https://github.com/UttamPanchasara">Uttam Panchasara</a>
  * @since 11/20/2018
  */
-class SplashViewModel<V>
-@Inject constructor(val mDataManager: DataManager,
-                    val mSchedulerProvider: SchedulerProvider,
-                    val mCompositeDisposable: CompositeDisposable) : BaseViewModel<V>() {
+class SplashViewModel
+@Inject constructor(mDataManager: DataManager,
+                    mSchedulerProvider: SchedulerProvider,
+                    mCompositeDisposable: CompositeDisposable) : BaseViewModel(mDataManager, mSchedulerProvider, mCompositeDisposable) {
 
     var mView: SplashView? = null
 
-    override fun onAttachView(v: BaseView) {
-        super.onAttachView(v)
-        mView = v as SplashView
-    }
-
-    override fun onDetachView() {
-        super.onDetachView()
-        mView = null
+    override fun onAttachView(view: BaseView) {
+        super.onAttachView(view)
+        mView = view as SplashView
     }
 
     fun navigateToSignIn() {

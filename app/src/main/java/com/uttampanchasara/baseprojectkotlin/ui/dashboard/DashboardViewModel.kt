@@ -12,15 +12,11 @@ import javax.inject.Inject
  * @author <a href="https://github.com/UttamPanchasara">Uttam Panchasara</a>
  * @since 11/16/2018
  */
-class DashboardViewModel<V> @Inject constructor(mDataManager: DataManager,
-                                                mSchedulerProvider: SchedulerProvider,
-                                                mCompositeDisposable: CompositeDisposable) : BaseViewModel<V>() {
-    override fun onAttachView(v: BaseView) {
+class DashboardViewModel
+@Inject constructor(mDataManager: DataManager,
+                    mSchedulerProvider: SchedulerProvider,
+                    mCompositeDisposable: CompositeDisposable) : BaseViewModel(mDataManager, mSchedulerProvider, mCompositeDisposable) {
+    override fun onAttachView(view: BaseView) {
 
     }
-
-    override fun onDetachView() {
-
-    }
-
 }

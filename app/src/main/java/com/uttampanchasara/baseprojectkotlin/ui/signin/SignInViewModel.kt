@@ -14,15 +14,11 @@ import javax.inject.Inject
  * @since 11/13/2018
  */
 @PerActivity
-class SignInViewModel<V>
-@Inject constructor(val mDataManager: DataManager,
-                    val mSchedulerProvider: SchedulerProvider,
-                    val mCompositeDisposable: CompositeDisposable) : BaseViewModel<V>() {
-    override fun onAttachView(v: BaseView) {
-
-    }
-
-    override fun onDetachView() {
+class SignInViewModel
+@Inject constructor(mDataManager: DataManager,
+                    mSchedulerProvider: SchedulerProvider,
+                    mCompositeDisposable: CompositeDisposable) : BaseViewModel(mDataManager, mSchedulerProvider, mCompositeDisposable) {
+    override fun onAttachView(view: BaseView) {
 
     }
 }

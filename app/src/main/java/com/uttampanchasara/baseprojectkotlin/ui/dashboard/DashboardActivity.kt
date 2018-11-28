@@ -15,7 +15,7 @@ class DashboardActivity : BaseActivity(), DashboardView {
     lateinit var mDataManager: DataManager
 
     @Inject
-    lateinit var mViewModel: DashboardViewModel<DashboardView>
+    lateinit var mViewModel: DashboardViewModel
 
     override fun injectComponents(mActivityComponent: ActivityComponent) {
         mActivityComponent.inject(this)

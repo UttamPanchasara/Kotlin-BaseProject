@@ -18,7 +18,7 @@ import javax.inject.Inject
 class SignInActivity : BaseActivity(), View.OnClickListener, SignInView {
 
     @field:Inject
-    lateinit var mViewModel: SignInViewModel<SignInView>
+    lateinit var mViewModel: SignInViewModel
 
     override fun onClick(v: View?) {
         when (v?.id) {
