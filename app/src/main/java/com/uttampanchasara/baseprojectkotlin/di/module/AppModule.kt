@@ -5,9 +5,13 @@ import android.arch.persistence.room.Room
 import android.content.Context
 import com.uttampanchasara.baseprojectkotlin.AppConstants
 import com.uttampanchasara.baseprojectkotlin.data.*
+import com.uttampanchasara.baseprojectkotlin.data.network.ApiHeader
+import com.uttampanchasara.baseprojectkotlin.data.network.ApiHelper
+import com.uttampanchasara.baseprojectkotlin.data.network.AppApiHelper
+import com.uttampanchasara.baseprojectkotlin.data.prefs.AppPreferencesHelper
+import com.uttampanchasara.baseprojectkotlin.data.prefs.PreferencesHelper
 import com.uttampanchasara.baseprojectkotlin.di.ApplicationContext
-import com.uttampanchasara.network.remote.ApiClient
-import com.uttampanchasara.network.remote.ApiServices
+import com.uttampanchasara.baseprojectkotlin.di.PreferenceInfo
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -32,9 +36,29 @@ class AppModule constructor(val mApplication: Application) {
     }
 
     @Provides
+    @PreferenceInfo
+    internal fun providePreferenceName(): String {
+        return AppConstants.PREF_NAME
+    }
+
+    @Provides
     @Singleton
-    internal fun provideApiService(): ApiServices {
-        return ApiClient().getApiServices()
+    internal fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper): PreferencesHelper {
+        return appPreferencesHelper
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideApiHelper(appApiHelper: AppApiHelper): ApiHelper {
+        return appApiHelper
+    }
+
+    @Provides
+    @Singleton
+    internal fun provideProtectedApiHeader(preferencesHelper: PreferencesHelper): ApiHeader.ProtectedApiHeader {
+        return ApiHeader.ProtectedApiHeader(
+                "",
+                "")
     }
 
     @Provides

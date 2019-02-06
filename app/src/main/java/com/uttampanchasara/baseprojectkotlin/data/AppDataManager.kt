@@ -1,10 +1,10 @@
 package com.uttampanchasara.baseprojectkotlin.data
 
 import android.content.Context
+import com.uttampanchasara.baseprojectkotlin.data.network.ApiHeader
+import com.uttampanchasara.baseprojectkotlin.data.network.ApiHelper
+import com.uttampanchasara.baseprojectkotlin.data.prefs.PreferencesHelper
 import com.uttampanchasara.baseprojectkotlin.di.ApplicationContext
-import com.uttampanchasara.network.remote.ApiServices
-import com.uttampanchasara.network.response.RecipeResponse
-import io.reactivex.Observable
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -17,8 +17,13 @@ import javax.inject.Singleton
 class AppDataManager
 @Inject internal constructor(@ApplicationContext val context: Context,
                              val dbHelper: DbHelper,
-                             val apiServices: ApiServices) : DataManager {
-    override fun getRecipes(query: String): Observable<RecipeResponse> {
-        return apiServices.getRecipes(query)
+                             val preferencesHelper: PreferencesHelper,
+                             val apiHelper: ApiHelper) : DataManager {
+    override fun setAccessToken(accessToken: String?) {
+        preferencesHelper.accessToken = accessToken
+    }
+
+    override fun getAccessToken(): String {
+        return preferencesHelper.accessToken
     }
 }

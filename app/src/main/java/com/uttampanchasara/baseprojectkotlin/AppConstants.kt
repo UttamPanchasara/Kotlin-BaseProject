@@ -7,4 +7,5 @@ package com.uttampanchasara.baseprojectkotlin
  */
 object AppConstants {
     internal val APP_DB_NAME = "base_project.db"
+    internal val PREF_NAME = "pref_app"
 }
