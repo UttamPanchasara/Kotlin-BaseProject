@@ -1,4 +1,4 @@
-# Android-Kotlin MVVM Architecture  
+# Android-Kotlin MVP Architecture  
 This repository contains a sample project with basic screens that implements MVVM architecture using Dagger2, Room, RxJava2, and Retrofit
 
 
