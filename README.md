@@ -19,7 +19,7 @@ This repository contains a sample project with basic screens that implements MVV
 #### Reference : This project is created from following reference project :
 https://github.com/MindorksOpenSource/android-mvp-architecture
 
-### Contributing to Android-Kotlin MVVM Architecture
+### Contributing to Android-Kotlin MVP Architecture
 All pull requests are welcome.
 
 ### Questions?
