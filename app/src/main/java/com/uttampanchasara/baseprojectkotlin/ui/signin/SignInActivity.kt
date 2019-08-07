@@ -2,7 +2,6 @@ package com.uttampanchasara.baseprojectkotlin.ui.signin
 
 import android.content.Intent
 import android.view.View
-import androidx.core.widget.toast
 import com.uttampanchasara.baseprojectkotlin.R
 import com.uttampanchasara.baseprojectkotlin.di.component.ActivityComponent
 import com.uttampanchasara.baseprojectkotlin.ui.base.BaseActivity
@@ -50,7 +49,7 @@ class SignInActivity : BaseActivity(), View.OnClickListener, SignInView {
 
         when {
             email.isEmpty() -> {
-                toast("Enter non empty Email")
+                onError("Enter non empty Email")
             }
             else -> {
                 startActivity(Intent(this, DashboardActivity::class.java))

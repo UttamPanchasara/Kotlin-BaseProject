@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import com.uttampanchasara.baseprojectkotlin.AppController
 import com.uttampanchasara.baseprojectkotlin.di.component.ActivityComponent
 import com.uttampanchasara.baseprojectkotlin.di.component.DaggerActivityComponent
@@ -40,6 +41,14 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     override fun onUnAuthorizedAccess() {
     }
 
+    override fun onError(msg: String) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onError(msg: Int) {
+        Toast.makeText(this, getString(msg), Toast.LENGTH_SHORT).show()
+    }
+
     lateinit var mActivityComponent: ActivityComponent
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,11 +74,6 @@ abstract class BaseActivity : AppCompatActivity(), BaseView {
     fun loadFragment(isAddToBackStack: Boolean = false, transaction: FragmentTransaction.() -> Unit) {
         val beginTransaction = supportFragmentManager.beginTransaction()
         beginTransaction.transaction()
-        /*for ((name, view) in transitionPairs) {
-            ViewCompat.setTransitionName(view, name)
-            beginTransaction.addSharedElement(view, name)
-        }*/
-
         if (isAddToBackStack) beginTransaction.addToBackStack(null)
         beginTransaction.commit()
     }

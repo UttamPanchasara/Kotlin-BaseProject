@@ -40,6 +40,14 @@ abstract class BaseFragment : Fragment(), BaseView {
 
     abstract fun setupView(view: View, savedInstanceState: Bundle?)
 
+    override fun onError(msg: Int) {
+        mActivity?.onError(msg)
+    }
+
+    override fun onError(msg: String) {
+        mActivity?.onError(msg)
+    }
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (getLayoutId() == 0) {

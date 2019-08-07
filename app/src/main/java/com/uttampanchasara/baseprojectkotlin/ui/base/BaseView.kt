@@ -14,4 +14,8 @@ interface BaseView {
     fun showLoading()
 
     fun onUnAuthorizedAccess()
+
+    fun onError(msg: String)
+
+    fun onError(msg: Int)
 }
